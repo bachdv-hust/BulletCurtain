@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
 import androidx.constraintlayout.motion.widget.MotionLayout
+import java.util.concurrent.Flow
+import kotlin.math.pow
 
 
 class TextureView : LinearLayout {
@@ -30,7 +32,17 @@ class TextureView : LinearLayout {
         inflater.inflate(R.layout.layout_bullet_curtain, this, true)
 
     }
+
+
 }
+
+
+class MathsCalculator(private val x0: Int, private val y0: Int) {
+    fun getYFromX(x: Int): Int {
+        return x0 * x.toDouble().pow(2).toInt() + y0
+    }
+}
+
 
 
 
